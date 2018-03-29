@@ -2,7 +2,7 @@ This program will generate random regions with city plots for SimCity 4.
 The .png files are handled with Lode Vandevenne's [lodepng](https://github.com/lvandeve/lodepng).
 **The code is in an early stage, not all features are implemented yet.**
 
-##Compilation
+## Compilation
 To compile run
 ```
 mkdir build && cd build
@@ -13,14 +13,14 @@ The resulting binary will search for a configuration file in its directory, mean
 copy or link the config file `reg_gen.cfg` to the build directory.  Parameters can be set in
 `reg_gen.cfg`. Width and height must to be integers.
 
-##Generating Region
+## Generating a Region
 To obtain the heightmap simply run `./sc4_region_gen`. 
 Feel free to play around with the parameters in `reg_gen.cfg`.
 The heightmap will be called `out.png`.
 No `config.bmp` (city plots) is generated at the moment
 and you will have to draw one yourself.
 
-##config.bmp instructions:
+## City Plots Instructions
 Since no config.bmp is generated you will have to create one yourself. Don't worry, it's easy.
 The bmp can be created in your favourite painting program.
 Create a bmp of size equal to width*height in your config in pixels.
@@ -37,7 +37,7 @@ Colour it accordingly:
 - Large city plot: red, 4*4 pixel
 The plots can be placed anywhere as long as you fill the entire image.
 
-##Importing it to SimCity
+## Importing it to SimCity
 1. Find the directory where the regions are located. It can be `~/Documents/SimCity4/Regions/`. On Windows it
 is most likely under 'My Documents'.
 2. Create a directory in the `Region/` directory called whatever you want to call your region.
