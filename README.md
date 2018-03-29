@@ -51,4 +51,5 @@ is most likely under 'My Documents'.
 
 ## Credits
 The .png files are handled with Lode Vandevenne's [lodepng](https://github.com/lvandeve/lodepng).
+
 Stefan Gustavson's paper [Simplex noise demystified](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf)  helped a great deal in understanding the algorithm. It also has a code example in Java of the simplex noise algorithm for up to 4 dimensions which was useful for comparing results. This project's simplex noise algorithm is more or less a C++ port of the example code given in the paper. 
