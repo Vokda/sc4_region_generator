@@ -3,7 +3,7 @@ Heightmaps are created using simplex noise in two dimensions.
 **The code is in an early stage, not all features are implemented yet.**
 
 ## Compilation
-To compile run
+To compile the code make sure you are in the project's root directory and run
 ```
 mkdir build && cd build
 cmake ../CMakeLists.txt
