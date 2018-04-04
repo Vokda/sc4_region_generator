@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <cmath>
+#include <random>
 
 using namespace std;
 struct conf;
@@ -123,7 +124,10 @@ class heightmap
 
 		void print_coord(const cell_coords& c) const;
 
-		const float MN = 0.5; //magic number
+		const float MN = 0.5; //The magic number that all projects need!
+
+		//random generator
+		mt19937 rand;
 };
 
 #endif 

@@ -3,7 +3,7 @@
 
 struct conf
 {
-	int octaves, width, height, km_width, km_height;
+	int octaves, width, height, km_width, km_height, seed;
 	float frequency, persistance;
 };
 

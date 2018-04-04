@@ -52,5 +52,7 @@ conf config_reader::read_config(const string& file_name)
 	cfg.octaves = values["octaves"];
 	cfg.persistance = values["persistance"];
 
+	cfg.seed = values["seed"];
+
 	return cfg;
 }

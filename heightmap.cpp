@@ -13,11 +13,12 @@ heightmap::heightmap(const conf& cfg):
 	_cfg(cfg),
 	_map(_cfg.width * _cfg.height * 4, 255), 
 	F( 0.5 * (std::sqrt(3.0)-1.0) ),
-	G( (3.0 - std::sqrt(3.0)) /6.0)
+	G( (3.0 - std::sqrt(3.0)) /6.0),
+	rand(_cfg.seed)
 {
 
 	//std::iota(_hash.begin(), _hash.end(), 0);
-	//std::random_shuffle(_hash.begin(), _hash.end());
+	std::random_shuffle(_hash.begin(), _hash.end(), [this](int i){return rand() % i;});
 
 	for(size_t i = 0; i < 512; ++i)
 	{
@@ -133,7 +134,6 @@ float heightmap::contribution(int g, float x, float y)
 {
 	//cout << "Contrib in: g " << g << ", x " << x << ", y " << y << endl;
 	float out = 0;
-	//g = (int)g % _grads.size();
 	float t = MN - std::pow(x, 2) - std::pow(y, 2);
 	//cout << MN << " - " << x << "^2 - " << y << "^2 = " << t << endl;
 	if(t < 0)
@@ -144,7 +144,6 @@ float heightmap::contribution(int g, float x, float y)
 	{
 		t *= t;
 		out = std::pow(t, 2) * dot(_grads[g], x, y); 
-		//cout << "gradient[" << g <<  "] [" << _grads[g].x << ", " << _grads[g].y << ", " << _grads[g].z << "]" << endl;
 	}
 	return out;
 }
