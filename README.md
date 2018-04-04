@@ -1,10 +1,9 @@
 This program will generate random regions with city plots for SimCity 4.
 Heightmaps are created using simplex noise in two dimensions.
-The .png files are handled with Lode Vandevenne's [lodepng](https://github.com/lvandeve/lodepng).
 **The code is in an early stage, not all features are implemented yet.**
 
 ## Compilation
-To compile run
+To compile the code make sure you are in the project's root directory and run
 ```
 mkdir build && cd build
 cmake ../CMakeLists.txt
@@ -49,3 +48,8 @@ is most likely under 'My Documents'.
 6. Wait....
 7. If you have generated a large map, wait even more.
 8. Done! Have fun! :)
+
+## Credits
+The .png files are handled with Lode Vandevenne's [lodepng](https://github.com/lvandeve/lodepng).
+
+Stefan Gustavson's paper [Simplex noise demystified](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf)  helped a great deal in understanding the algorithm. It also has a code example in Java of the simplex noise algorithm for up to 4 dimensions which was useful for comparing results. This project's simplex noise algorithm is more or less a C++ port of the example code given in the paper. 
