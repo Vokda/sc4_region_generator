@@ -15,12 +15,29 @@ class city_plotter
 		 */
 		void generate();
 
-		void save(const std::string& name) const;
+		void save(const std::string& name);
 	private:
+		
+		//Lode Vandevenne's PNG to BMP converter
+		void encodeBMP(std::vector<unsigned char>& bmp, const unsigned char* image, int w, int h);
+
+		//fill with large city plots 
+		void large_fill();
+
+		//find if is pixel colored
+		bool  colorized(const unsigned char* pixel) const;
+
+		//fill plot, returns false if fails to fill in plot
+		bool fill(int plot_size, int width, int height);
+
 		const conf& _cfg;
 		std::vector<unsigned char> _out;
-		int SMALL = 1;
-		int MEDIUM = 2;
-		int LARGE = 4;
+		std::vector<unsigned char> _bmp;
+		std::vector<std::vector<char>> _uncolored;
+		//city plots
+		const int SMALL = 1;	//red
+		const int MEDIUM = 2;	//green
+		const int LARGE = 4;	//blue
+		const int COLOR_CHANNELS = 3;
 };
 #endif

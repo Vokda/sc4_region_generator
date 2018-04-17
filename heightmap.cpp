@@ -12,12 +12,13 @@ using namespace std;
 heightmap::heightmap(const conf& cfg):
 	_cfg(cfg),
 	_map(_cfg.width * _cfg.height * 4, 255), 
+	_hash(256),
 	F( 0.5 * (std::sqrt(3.0)-1.0) ),
 	G( (3.0 - std::sqrt(3.0)) /6.0),
 	rand(_cfg.seed)
 {
 
-	//std::iota(_hash.begin(), _hash.end(), 0);
+	std::iota(_hash.begin(), _hash.end(), 0);
 	std::random_shuffle(_hash.begin(), _hash.end(), [this](int i){return rand() % i;});
 
 	for(size_t i = 0; i < 512; ++i)
